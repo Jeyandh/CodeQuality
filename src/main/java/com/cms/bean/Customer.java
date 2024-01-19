@@ -1,4 +1,4 @@
-package com.cms.BEAN;
+package com.cms.bean;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
