@@ -19,30 +19,33 @@ import com.cms.dao.CustomerDAO;
 
 @RestController
 @CrossOrigin("http://localhost:4200/")
-public class CMScontroller {
+public class CMSController {
 	@Autowired
 	CustomerDAO dao;
 
 	@PostMapping("performInsert")
-    public String insert(@RequestBody Customer cust) {
-        dao.save(cust);
-        return "Inserted";
-    }
-    @PutMapping("performUpdate")
-    public String update(@RequestBody Customer cust) {
-        dao.save(cust);
-        return "Updated";
-    }
+	public String performInsert(@RequestBody Customer cust) {
+		dao.save(cust);
+		return "Inserted";
+	}
+
+	@PutMapping("performUpdate")
+	public String performUpdate(@RequestBody Customer cust) {
+		dao.save(cust);
+		return "Updated";
+	}
+
 	@DeleteMapping("performDelete/{id}")
-	public String delete(@PathVariable("id") int id) {
+	public String performDelete(@PathVariable("id") int id) {
 		dao.deleteById(id);
 		return "Deleted";
 	}
+
 	@GetMapping("viewAll")
-	public List<Customer> view() {
+	public List<Customer> viewAllDetails() {
 		Iterator<Customer> it = dao.findAll().iterator();
 		ArrayList<Customer> list = new ArrayList<>();
-		while(it.hasNext()) {
+		while (it.hasNext()) {
 			list.add(it.next());
 		}
 		return list;
