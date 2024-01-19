@@ -8,6 +8,7 @@ import jakarta.persistence.Table;
 @Entity
 @Table(name = "tbl_customer")
 public class Customer {
+	//variables
 	@Id
 	@Column(name="c_id")
 	private int id;
@@ -19,11 +20,11 @@ public class Customer {
 	private int contact;
 	@Column(name="c_location")
 	private String location;
-
+	//constructor
 	public Customer() {
 		super();
 	}
-
+	
 	public Customer(int id, String name, String email, int contact, String location) {
 		super();
 		this.id = id;
@@ -32,7 +33,7 @@ public class Customer {
 		this.contact = contact;
 		this.location = location;
 	}
-
+	//getters and setters
 	public int getId() {
 		return id;
 	}
