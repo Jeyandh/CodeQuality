@@ -22,25 +22,25 @@ import com.cms.dao.CustomerDAO;
 public class CMSController {
 	@Autowired
 	CustomerDAO dao;
-
+	//Method to insert customer details
 	@PostMapping("performInsert")
 	public String performInsert(@RequestBody Customer cust) {
 		dao.save(cust);
 		return "Inserted";
 	}
-
+	//Method to update customer details
 	@PutMapping("performUpdate")
 	public String performUpdate(@RequestBody Customer cust) {
 		dao.save(cust);
 		return "Updated";
 	}
-
+	//Method to delete customer details
 	@DeleteMapping("performDelete/{id}")
 	public String performDelete(@PathVariable("id") int id) {
 		dao.deleteById(id);
 		return "Deleted";
 	}
-
+	//Method to find customer details
 	@GetMapping("viewAll")
 	public List<Customer> viewAllDetails() {
 		Iterator<Customer> it = dao.findAll().iterator();
