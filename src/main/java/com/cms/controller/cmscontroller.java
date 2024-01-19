@@ -19,7 +19,7 @@ import com.cms.dao.CustomerDAO;
 
 @RestController
 @CrossOrigin("http://localhost:4200/")
-public class cmscontroller {
+public class CMScontroller {
 	@Autowired
 	CustomerDAO dao;
 
